@@ -1,0 +1,15 @@
+{
+    "jwtSecret": "xxx",
+    "mongoURI": "mongodb://xxx",
+    "Mongo": {
+        "user": "xxx",
+        "pwd": "xxx"
+    },
+    "FACEBOOK_CONFIG": {
+        "clientID": "xxx",
+        "clientSecret": "xxx",
+        "callbackURL": "https://localhost:8080/api/oauth/facebook/callback",
+        "authorizationURL": "https://www.facebook.com/v6.0/dialog/oauth",
+        "tokenURL": "https://graph.facebook.com/v6.0/oauth/access_token"
+    }
+}

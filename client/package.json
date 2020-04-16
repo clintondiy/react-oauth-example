@@ -1,0 +1,55 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@trendmicro/react-sidenav": "^0.5.0",
+    "axios": "^0.18.1",
+    "bootstrap": "^4.4.1",
+    "config": "^3.3.1",
+    "css-loader": "^3.0.0",
+    "dotenv": "^8.2.0",
+    "file-saver": "^2.0.2",
+    "filepond": "^4.4.11",
+    "filepond-plugin-image-exif-orientation": "^1.0.6",
+    "filepond-plugin-image-preview": "^4.2.1",
+    "history": "^4.9.0",
+    "https": "^1.0.0",
+    "moment": "^2.24.0",
+    "react": "^16.13.0",
+    "react-document-title": "^2.0.3",
+    "react-dom": "^16.13.0",
+    "react-filepond": "^7.0.1",
+    "react-fontawesome": "^1.7.1",
+    "react-landing-page": "^2.0.2",
+    "react-redux": "^7.2.0",
+    "react-resize-image": "^1.0.4",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "react-stormpath": "^2.0.1",
+    "react-transition-group": "^2.9.0",
+    "reactstrap": "^8.4.1",
+    "rebass": "^4.0.7",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "styled-components": "^5.0.1",
+    "xlsx": "^0.15.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

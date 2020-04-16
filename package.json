@@ -1,0 +1,49 @@
+{
+  "name": "mern-basic",
+  "version": "1.0.0",
+  "description": "Mern build",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "docker-deploy": "\"docker stop marshmallow \" \"docker rm marshmallow\" \"docker build -t marshmallow .\" \"docker run -d --name marshmallow -p 8080:8080 marshmallow\" "
+  },
+  "author": "Felix Wong",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "buildjs": "^1.0.3",
+    "concurrently": "^4.1.0",
+    "config": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.17.0",
+    "git": "^0.1.5",
+    "http-proxy-middleware": "^1.0.0",
+    "json-parser": "^3.1.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mdbreact": "^4.11.1",
+    "mongoose": "^5.4.17",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.5",
+    "npm": "^6.10.1",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-github": "^1.1.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-twitter": "^1.0.4",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.19.4"
+  }
+}
