@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
-const { API_OAUTH_URL } = require('./../../config')
+const { API_OAUTH_URL } = require('./config')
 // import config from 'config'
 
 export default class OAuth extends Component {
