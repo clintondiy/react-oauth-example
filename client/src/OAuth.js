@@ -12,7 +12,6 @@ export default class OAuth extends Component {
 
   componentDidMount() {
     const { socket, provider } = this.props
-
     console.log(socket)
 
     socket.on(provider, user => {  
@@ -38,13 +37,12 @@ export default class OAuth extends Component {
   // data to the appropriate socket on the connected client.
   openPopup() {
     const { provider, socket } = this.props
+    const url = `${API_OAUTH_URL}/${provider}?socketId=${socket.id}`
     console.log(socket)
 
     const width = 600, height = 600
     const left = (window.innerWidth / 2) - (width / 2)
     const top = (window.innerHeight / 2) - (height / 2)
-    // const url = `${config.get('API_URL')}/${provider}?socketId=${socket.id}`
-    const url = `${API_OAUTH_URL}/${provider}?socketId=${socket.id}`
 
     return window.open(url, '',       
       `toolbar=no, location=no, directories=no, status=no, menubar=no, 
@@ -92,10 +90,7 @@ export default class OAuth extends Component {
                 onClick={this.startAuth.bind(this)} 
                 className={`${provider} ${disabled} button`}
               >
-                <span>Login with Facebook</span>
-                <FontAwesome
-                  name={provider}
-                />
+                <span>Open popup window use socket to commuitate with server</span>
               </button>
             </div>
         }
