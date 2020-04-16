@@ -1,18 +1,21 @@
 // Import Components
 import React, { Component } from "react";
-import io from 'socket.io-client'
-import OAuth from "./OAuth";
+import OAuth from "./OAuth"
 
 import {
   Container
 } from "reactstrap"
 
-//CSS
-import "bootstrap/dist/css/bootstrap.min.css";
-
-const { API_OAUTH_URL } = require('./config')
-const socket = io(API_OAUTH_URL);
+// import io from 'socket.io-client'
+// const { API_OAUTH_URL } = require('./config')
+// const socket = io(API_OAUTH_URL);
 const providers = ['facebook']
+
+const
+    io = require("socket.io-client"),
+    ioClient = io.connect("http://localhost:8000");
+
+ioClient.on("seq-num", (msg) => console.info(msg));
 
 class App extends Component {
   render() {
@@ -22,7 +25,7 @@ class App extends Component {
           <OAuth
             provider={provider}
             key={provider}
-            socket={socket}
+            socket={ioClient}
           />
         )}
       </Container>
