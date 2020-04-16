@@ -10,9 +10,12 @@ import {
 //CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const { API_OAUTH_URL } = require('./config')
-const socket = io(API_OAUTH_URL);
+// const { API_OAUTH_URL } = require('./config')
+// const socket = io.connect(API_OAUTH_URL);
 const providers = ['facebook']
+
+const socket = io.connect('https://localhost:8080');
+socket.on("seq-num", (msg) => console.info(msg));
 
 class App extends Component {
   render() {
