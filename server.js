@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require('dotenv').config()
 const cors = require('cors')
 const express = require("express")
@@ -44,6 +45,20 @@ passportInit()
 
 // const io = require("socket.io")
 // const ios = io.listen(8000)
+=======
+const expressApp = require("express")()
+const fs = require("fs")
+const https = require("https");
+const secureServer = https.createServer({
+    key: fs.readFileSync('./ssl/server.key'),
+    cert: fs.readFileSync('./ssl/server.crt')
+}, expressApp);
+const ios = require('socket.io')(secureServer);
+
+secureServer.listen(8080, () => {
+    console.log("secure server started at 8080");
+})
+>>>>>>> socket
 
 let sequenceNumberByClient = new Map();
 
@@ -68,6 +83,7 @@ setInterval(() => {
     }
 }, 1000);
 
+<<<<<<< HEAD
 // use routes
 // Direct request to auth router
 // app.use('/api/oauth', authRouter);
@@ -75,3 +91,15 @@ setInterval(() => {
 server.listen(process.env.PORT || 8080, () => {
   console.log('Server listening on 8080')
 })
+=======
+// ###### Simulate Client socket call
+// Below code failed to connect if placed in client App.js
+const io = require("socket.io-client");
+const ioClient = io.connect("https://localhost:8080", {
+    secure: true,
+    reconnection: true,
+    rejectUnauthorized: false
+});
+
+ioClient.on("seq-num", (msg) => console.info('Simulated client: ' + msg));
+>>>>>>> socket
